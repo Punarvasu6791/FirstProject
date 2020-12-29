@@ -19,7 +19,7 @@
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
 									"});",
-									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"//pm.test(\"Response time is less than 120ms\", function () {",
 									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
 									"//});",
 									"pm.test(\"Check that all click-in ads are displayed\", function () {",
