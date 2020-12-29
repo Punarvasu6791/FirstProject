@@ -1,0 +1,1054 @@
+{
+	"info": {
+		"_postman_id": "5f37545e-5c7e-43b4-bc84-a25dfe55e81c",
+		"name": "Ad_Tech API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mobile web",
+			"item": [
+				{
+					"name": "mweb_All click-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "88a84413-150a-4242-90b3-871df1c1b660",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_segmentation click-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1da2bc66-08ce-4bad-bd27-e867ea24a059",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that segment id is available\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"5c7f62e046e0fb0001a26d34\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008814\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_All click-out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1bc78aef-1f7a-492a-a644-17bff340daf4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_segmentation for click-out ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c6b6f1b9-7e82-4c42-8a55-c7f9748ddccd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									"",
+									"pm.test(\"Verify that segment id is available\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"5c7f62e046e0fb0001a26d96\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_RENDER false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64a1efcf-7f13-40fc-99d3-ac970b7b3770",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify render false is displayed\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"false\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Android",
+			"item": [
+				{
+					"name": "mweb_All click-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b039047a-96cb-4019-8dad-36bf6f65833d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_segmentation click-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "504f3d2e-408d-46e6-9c5c-118a22ab8bd2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that segment id is available\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"5c7f62e046e0fb0001a26d34\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008814\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_All click-out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3d70c6a7-8b57-480c-aec0-dc1c7d12db7f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_segmentation for click-out ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "21c9315b-2172-4b9f-a106-69b7cc079a8a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									"",
+									"pm.test(\"Verify that segment id is available\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"5c7f62e046e0fb0001a26d96\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_RENDER false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0c8053d-c312-451d-a8ab-3b926477853f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify render false is displayed\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"false\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "IOS",
+			"item": [
+				{
+					"name": "mweb_All click-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4d7dfbda-80ce-4121-a6dd-b5109169d8a2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_segmentation click-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f8b7f060-7820-4c9f-ae8a-3e452f4967fe",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that segment id is available\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"5c7f62e046e0fb0001a26d34\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008814\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_All click-out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "151a7056-a090-4c45-8d57-89f0165491bf",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_segmentation for click-out ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ade10bc2-64a7-4de5-8d4e-ceda7d516de9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									"",
+									"pm.test(\"Verify that segment id is available\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"5c7f62e046e0fb0001a26d96\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "mweb_RENDER false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc22b93f-fea6-4907-a141-38a816882322",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-out ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickIn\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify render false is displayed\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"false\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.0679964555.1588688291213\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"{{Appcode_mweb}}\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.testbms.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"testbms",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ce5fc205-5200-4ccf-826f-11551cccc250",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9aa121b8-f728-45a3-b35e-ab5f7d686310",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cf528f16-55cc-488f-92bf-73f2c32e3a7d",
+			"key": "SIT",
+			"value": "http://in-adtech-api.sit.n3b.bookmyshow.org",
+			"type": "string"
+		},
+		{
+			"id": "cf7e6024-7895-480c-928a-4d0be0e6f6f1",
+			"key": "Appcode_mweb",
+			"value": "WEBV2",
+			"type": "string"
+		},
+		{
+			"id": "bb3d8a47-189e-42fd-9e78-7e005b77d76f",
+			"key": "Appcode_android",
+			"value": "MOBAND2",
+			"type": "string"
+		},
+		{
+			"id": "327bdb0e-5534-4452-96b7-0419b65a1cc7",
+			"key": "Appcode_ios",
+			"value": "MOBIOS3",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

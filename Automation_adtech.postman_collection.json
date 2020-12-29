@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "4e0a4a47-d2f2-47cb-b3c9-3763f0f18dd1",
+		"name": "Automation_adtech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Response code",
+			"item": [
+				{
+					"name": "V1_Android",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bf580941-830e-4eae-8345-90b41137850e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//pm.test(\"Response time is less than 60ms\", function () {",
+									"  //  pm.expect(pm.response.responseTime).to.be.below(60);",
+									"//});",
+									"pm.test(\"Check that all click-in ads are displayed\", function () {",
+									"    pm.expect(pm.response.text()).not.to.include(\"clickOut\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publisher\": \"bms\",\n  \"bmsId\": \"1.66870639.1587971764177\",\n  \"memberId\": \"97008135\",\n  \"emailId\": \"\",\n  \"phone\": \"7977911014\",\n  \"regionCode\": \"MUMBAI\",\n  \"subRegionCode\": \"Hello\",\n  \"latitude\": 13.0020077,\n  \"longitude\": 77.6391148,\n  \"appCode\": \"MOBAND2\",\n  \"appVersion\": \"488\",\n  \"screen\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://in.bookmyshow.com/api/ads/v1/fetch",
+							"protocol": "https",
+							"host": [
+								"in",
+								"bookmyshow",
+								"com"
+							],
+							"path": [
+								"api",
+								"ads",
+								"v1",
+								"fetch"
+							]
+						},
+						"description": "Key value pair"
+					},
+					"response": []
+				},
+				{
+					"name": "V2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "86a692a9-0548-48cc-bb9e-672737a38836",
+								"exec": [
+									"pm.test(\"Verify that status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"publisher\": { \r\n\t\t\"code\": \"bms\", \r\n\t\t\"name\": \"\", \r\n\t\t\"domain\": \"\"\r\n\t},\r\n\t\"app\": {\r\n\t\t\"ver\": \"1.421.4\",\r\n\t\t\"bundle\": \"234\"\r\n\t},\r\n\t\"site\": {\r\n\t\t\"domain\": \"\"\r\n\t},\r\n\t\"device\": {\r\n\t\t\"ua\": \"\",\r\n\t\t\"ip\": \"\",\r\n\t\t\"ifa\": \"\",\r\n\t\t\"carrier\": \"\",\r\n\t\t\"language\": \"\", \r\n\t\t\"make\": \"\", \r\n\t\t\"model\": \"\",\r\n\t\t\"os\": \"\",\r\n\t\t\"osv\": \"\",\r\n\t\t\"connectiontype\": \"\", \r\n\t\t\"devicetype\": \"\", \r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": 33.532,\r\n\t\t\t\"lon\": 52.3235,\r\n\t\t\t\"country\": \"\",\r\n\t\t\t\"metro\": \"\",\r\n\t\t\t\"region\": \"\",\r\n\t\t\t\"city\": \"\",\r\n\t\t\t\"zip\": 400000\r\n\t\t}\r\n\t},\r\n\t\"user\": {\r\n\t\t\"id\": \"1.648548976.1575513131804\", \r\n\t\t\"ext\": {\r\n\t\t\t\"mid\": \"1152642\"\r\n\t\t}\r\n\t},\r\n\t\"adunit\": {\r\n\t\t\"codes\": [ \"adunit_splash_android\" ] \r\n\t},\r\n\t\"timestamp\": 3423523\r\n}\t"
+						},
+						"url": {
+							"raw": "{{URL_SIT}}/api/adtech-serving/v1/fetch",
+							"host": [
+								"{{URL_SIT}}"
+							],
+							"path": [
+								"api",
+								"adtech-serving",
+								"v1",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1f8c272a-5cba-4d07-80a4-1e67dffe91c6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ee2c5cf4-ab68-4dbd-8654-f91d51a586b9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f9e0c125-c31a-4988-ac44-2ccd4cf587ef",
+			"key": "URL_prod",
+			"value": ""
+		},
+		{
+			"id": "0b20a5a1-9571-4e59-b167-d321923ebbbf",
+			"key": "URL_SIT",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
